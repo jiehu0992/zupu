@@ -1,6 +1,6 @@
 简易家谱管理系统
 --
-* 简易家谱管理系统源于一个朋友的需求而开发，内核采用ThinkPHP5，底层框架沿用波波TP-admin，前端引入库为layui和echarts。
+* 简易家谱管理系统源于一个朋友的需求而开发，内核采用ThinkPHP5，底层框架沿用波波的另一开源项目[TP-admin](https://gitee.com/zkii_admin/Tp-admin "TP-admin")，前端引入库为layui和echarts。
 * 项目安装及二次开发请参考 ThinkPHP 官方文档及下面的服务环境说明，数据库 sql 文件存放于项目根目录下。
 > 注意：项目测试请另行搭建环境并创建数据库（数据库配置 application/database.php）, 切勿直接使用测试环境数据！
 
@@ -66,3 +66,7 @@ location / {
 * ThinkPHP开发团队
 * Layui前端
 * Echarts图表
+
+打赏
+--
+<img src="https://gitee.com/zkii_admin/jiapu/tree/master/static/theme/default/img/qrcode.png"  width="250">
