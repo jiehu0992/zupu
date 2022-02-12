@@ -5,9 +5,10 @@
 > 注意：项目测试请另行搭建环境并创建数据库（数据库配置 application/database.php）, 切勿直接使用测试环境数据！
 
 
-Documentation
+开发文档
 --
 本项目相关开发文档：http://doc.zkii.net/web/#/4?page_id=21
+项目界面预览：https://www.zkii.net/code/webcode/4585.html
 如有问题可以直接QQ：2398156504
 
 
