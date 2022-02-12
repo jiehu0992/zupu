@@ -69,4 +69,4 @@ location / {
 
 打赏
 --
-<img src="static/theme/default/img/qrcode.png"  width="250">
+<img src="static/theme/default/img/qrcode.png"  width="400">
