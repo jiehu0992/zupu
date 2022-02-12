@@ -69,4 +69,4 @@ location / {
 
 打赏
 --
-<img src="https://gitee.com/zkii_admin/jiapu/tree/master/static/theme/default/img/qrcode.png"  width="250">
+<img src="static/theme/default/img/qrcode.png"  width="250">
