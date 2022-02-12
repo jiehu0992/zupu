@@ -1,0 +1,12 @@
+---------------------------------------------------------------
+[ 2022-02-08T13:42:15+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/edit.html?fid=1&spm=m-113-118&open_type=modal
+[ error ] [10501]SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '' for column 'birthday' at row 1[D:\WWW\jiapu_baiqianwan_net\thinkphp\library\think\db\Connection.php:453]
+---------------------------------------------------------------
+[ 2022-02-08T13:42:31+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/edit.html?fid=1&spm=m-113-118&open_type=modal
+[ error ] [10501]SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '' for column 'birthday' at row 1[D:\WWW\jiapu_baiqianwan_net\thinkphp\library\think\db\Connection.php:453]
+---------------------------------------------------------------
+[ 2022-02-08T13:53:23+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/edit.html?fid=1&spm=m-113-118&open_type=modal
+[ error ] [10501]SQLSTATE[HY000]: General error: 1364 Field 'birthday' doesn't have a default value[D:\WWW\jiapu_baiqianwan_net\thinkphp\library\think\db\Connection.php:453]
+---------------------------------------------------------------
+[ 2022-02-08T13:54:59+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/index.html?fid=1&spm=m-113-118
+[ error ] [0]致命错误: Call to undefined function getRegionName()[D:\WWW\jiapu_baiqianwan_net\runtime\temp\61c941e003daae9d480fc5f12b90b4c4.php:95]

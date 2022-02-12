@@ -1,0 +1,84 @@
+{extend name='extra@admin/content'}
+
+{block name="content"}
+<div class="code">
+    <blockquote class="site-text layui-elem-quote">
+        使用步骤：
+        <hr/>
+        <p style='font-size:12px;line-height:26px'>
+            1. 在父级页面添加按钮<span class="layui-badge-rim">新增属性</span>，当然按钮名称可任意定义。
+        </p>
+        <p style='font-size:12px;line-height:26px'>
+            2. 新增表单元素的外层需包括一层<span class="layui-badge-rim">DIV</span>，并赋予属性<span class="layui-badge-rim">id="extra_attr"</span>。
+        </p>
+        <p style='font-size:12px;line-height:26px'>
+            3. 在父级页面中添加事件监听来动态创建元素和销毁元素。
+        </p>
+    </blockquote>
+    <form class="layui-form layui-box" style='padding:25px 30px 20px 0' action="__SELF__" data-auto="true" method="post">
+        <div class="layui-form-item">
+            <label class="layui-form-label">示例表单</label>
+            <div class="layui-input-inline">
+                <input name="demo1" value='' placeholder="仅供演示" class="layui-input">
+            </div>
+            <label class="layui-form-label">示例元素</label>
+            <div class="layui-input-inline">
+                <input name="demo2" value='' placeholder="仅供演示" class="layui-input" >
+            </div>
+        </div>
+        <div class="hr-line-dashed"></div>
+        <div class="layui-text" style="margin-top: 5px">
+            <span style="margin-left: 40px;font-size: 14px;"><b>自定义属性</b></span>
+            <span class="nowrap pull-right">
+            <a data-modal='{:url("/admin/plugs/formdiy")}' data-title="新增属性" class="layui-btn layui-btn-xs" href="javascript:void(0)"><i class="fa fa-bookmark-o"></i> 新增属性</a>
+        </span>
+            <input id="extra" type='hidden' value='{$vo.extra|default=""}' name='extra'/>
+        </div>
+        <div id="extra_attr" style="margin-top: 10px;">
+
+        </div>
+        <div class="hr-line-dashed"></div>
+    </form>
+    <script>
+        window.form.render();
+        function appendAttr(d,e){
+            $(e).hide().appendTo($('#'+d)).fadeIn('slow');
+            window.form.render();
+        }
+        //删除按钮--删除动态添加的元素
+        $(document).on('click','.delete',function () {
+            $(this).parent().parent().remove();
+            window.form.render();
+        })
+    </script>
+
+    <pre class="layui-code" lay-title="HTML代码">
+<div class="layui-text" style="margin-top: 5px">
+    <span style="margin-left: 40px;font-size: 14px;"><b>自定义属性</b></span>
+    <span class="nowrap pull-right">
+        <a data-modal='{:url("$classuri/extra")}' data-title="新增属性" class="layui-btn layui-btn-xs" href="javascript:void(0)"><i class="fa fa-bookmark-o"></i> 新增属性</a>
+    </span>
+    <input id="extra" type='hidden' value='{$vo.extra|default=""}' name='extra'/>
+</div>
+//表单新增元素的DIV区域
+<div id="extra_attr" style="margin-top: 10px;">
+
+    </pre>
+
+    <pre class="layui-code" lay-title="javascript代码">
+
+//创建自定义属性
+function appendAttr(d,e){
+   $(e).hide().appendTo($('#'+d)).fadeIn('slow');
+   window.form.render();
+}
+//删除自定义属性
+   $(document).on('click','.delete',function () {
+        $(this).parent().parent().remove();
+        window.form.render();
+   })
+    </pre>
+</div>
+
+
+{/block}

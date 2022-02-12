@@ -1,0 +1,1364 @@
+---------------------------------------------------------------
+[ 2022-02-11T18:03:16+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin
+[ sql ] [ DB ] CONNECT:[ UseTime:0.048807s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.136331s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.023390s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:03:16+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001694s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002152s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/login/index' LIMIT 1 [ RunTime:0.000661s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.012646s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000528s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:03:23+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/login.html?spm=
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001206s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002078s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/login/index' LIMIT 1 [ RunTime:0.002960s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.022481s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.009476s ]
+[ sql ] [ SQL ] UPDATE `system_user`  SET `login_at`=now(),`login_num`=login_num+1  WHERE  `id` = 10000 [ RunTime:0.054855s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.003699s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.017220s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.012723s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_log` [ RunTime:0.015970s ]
+[ sql ] [ SQL ] INSERT INTO `system_log` (`ip` , `node` , `username` , `action` , `content`) VALUES ('127.0.0.1' , 'admin/login/index' , 'admin' , '系统管理' , '用户登录系统成功') [ RunTime:0.011937s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:03:24+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001111s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002003s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000378s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.011295s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.001975s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000384s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.016798s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.006060s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000628s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.007597s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.001957s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:03:24+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/family/index.html?spm=m-113-115
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003645s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002331s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/family/index' LIMIT 1 [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family` [ RunTime:0.012026s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `system_family` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.012359s ]
+[ sql ] [ SQL ] SELECT * FROM `system_family` WHERE  `is_deleted` = 0 ORDER BY `id` DESC LIMIT 0,15 [ RunTime:0.000462s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.007606s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000363s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:03:29+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/index.html?fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001304s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002422s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/index' LIMIT 1 [ RunTime:0.000551s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.010865s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `system_family_member` WHERE  `fid` = 1  AND `pid` = 0  AND `is_deleted` = 0 LIMIT 1 [ RunTime:0.000643s ]
+[ sql ] [ SQL ] SELECT * FROM `system_family_member` WHERE  `fid` = 1  AND `pid` = 0  AND `is_deleted` = 0 LIMIT 0,20 [ RunTime:0.000421s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family` [ RunTime:0.002643s ]
+[ sql ] [ SQL ] SELECT `name` FROM `system_family` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.006997s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.003757s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_region` [ RunTime:0.008113s ]
+[ sql ] [ SQL ] SELECT `name` FROM `system_region` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.008429s ]
+[ sql ] [ SQL ] SELECT `name` FROM `system_region` WHERE  `id` = 11261 LIMIT 1 [ RunTime:0.003349s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002440s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000363s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:03:33+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001633s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.006831s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000768s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002694s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000365s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:03:34+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001088s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002068s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000396s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.001221s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 0 LIMIT 1 [ RunTime:0.000407s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:04:39+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001212s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002261s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000488s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.003408s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.001752s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.002936s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.002335s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000731s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000756s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002817s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000425s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:04:40+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001524s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.003653s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.005593s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000836s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:04:40+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001423s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002301s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000661s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.001664s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 0 LIMIT 1 [ RunTime:0.000538s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:11:16+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005994s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.006572s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.002301s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.002321s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000693s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.003106s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000657s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.004061s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.003129s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000649s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002212s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000382s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:11:17+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020890s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002440s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.001152s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.003133s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000484s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:11:17+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001118s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002149s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000508s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.003009s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 0 LIMIT 1 [ RunTime:0.000617s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:30:08+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006189s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.006796s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.002464s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000668s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.002462s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000508s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.002674s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.001076s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.001205s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002299s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000411s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:30:09+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001552s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002132s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000394s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000353s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:30:09+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001313s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002567s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000986s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.001952s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 0 LIMIT 1 [ RunTime:0.000506s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:33:02+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001200s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000831s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000558s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.002177s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000450s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.002164s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000474s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.002191s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.001731s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000978s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000992s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000341s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:33:03+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001155s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000849s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000375s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.003421s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.004131s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:33:03+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001229s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001140s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000377s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.001167s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 0 LIMIT 1 [ RunTime:0.000360s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:34:34+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001195s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000983s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.003359s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.002591s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.002242s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000620s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001090s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.001049s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:34:35+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001136s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000833s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000632s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001224s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.002581s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:34:35+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001420s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001499s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000730s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.002237s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 0 LIMIT 1 [ RunTime:0.000659s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:37:04+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001434s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001143s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000814s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.003548s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000589s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.002376s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.002400s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000830s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000690s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002446s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000447s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:37:04+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001489s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001032s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000462s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001014s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000368s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:37:05+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001120s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001288s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.001302s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.001685s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 0 LIMIT 1 [ RunTime:0.000394s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:37:59+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002348s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001576s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.002380s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000539s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.002214s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.002219s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000795s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.001529s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002532s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000403s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:37:59+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004484s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001720s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000884s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000867s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000307s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:38:00+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001192s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001033s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.001267s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 0 LIMIT 1 [ RunTime:0.000443s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:38:25+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001333s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000983s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000476s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.004218s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000489s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.002210s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000476s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.002224s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000720s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000612s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.003647s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000672s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:38:26+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001369s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000898s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000485s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000942s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000341s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:38:26+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001174s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001127s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.001230s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000382s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000864s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:38:42+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001342s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000825s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000513s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.002147s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000458s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.003394s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000763s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.002207s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000744s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000953s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002507s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000386s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:38:43+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001621s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001688s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.002445s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001354s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000343s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:38:43+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001253s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002311s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.001601s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.002374s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000512s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000669s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:38:58+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001440s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001370s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.001273s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000455s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000936s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000374s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.001318s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.001347s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000751s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000978s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000319s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:38:59+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001240s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000989s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000577s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002777s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.007447s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:38:59+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001124s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000844s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000361s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.003983s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.001104s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000598s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:39:14+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001797s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000914s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.002432s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000436s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.002152s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.002122s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000670s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000564s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001055s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000302s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:39:14+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001350s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.003400s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.001005s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001555s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000583s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:39:14+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001140s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000914s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000354s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.001176s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.001495s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000479s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:39:35+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001313s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000873s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000536s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.003115s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000451s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.002169s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000443s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.002210s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000672s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000609s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001144s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000346s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:39:36+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001221s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.004353s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.001093s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000896s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000335s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:39:36+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001106s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000795s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.001268s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000459s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:40:18+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003687s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002382s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000523s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.002971s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.001180s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.002666s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000436s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.005950s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.003031s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001010s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000328s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:40:19+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001636s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001491s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000979s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.004637s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000827s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:40:19+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001894s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001842s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000813s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.001869s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.001305s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.002242s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.002805s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000460s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:52:06+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004466s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.005631s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.005393s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000513s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.002170s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000388s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.002205s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000645s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000696s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000949s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000329s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:52:07+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001604s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001848s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.001509s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001447s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000634s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:52:08+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001669s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001644s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000832s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.002429s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000837s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.001546s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.002015s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000748s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:52:42+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001189s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000812s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.000906s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.003303s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.001790s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000684s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.002123s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000576s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001196s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000491s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:52:43+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001816s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001231s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000516s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001523s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.003063s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:52:43+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002579s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002338s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000753s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.002716s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000891s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.001132s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000770s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:54:52+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003024s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001755s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.002161s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000377s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.002131s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000371s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.002396s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000674s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000975s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000331s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:54:53+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001399s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000965s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001493s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000799s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:54:53+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002274s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.006057s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000963s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.002034s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000784s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.001023s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.002987s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000820s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:55:07+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003592s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000917s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000494s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.000974s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000467s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.001002s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000845s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.002717s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.001187s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000670s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001062s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000446s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:55:07+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001122s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.004230s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001277s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000459s ]
+---------------------------------------------------------------
+[ 2022-02-11T18:55:08+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001218s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000843s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.000935s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.002217s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.001164s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000416s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:12:39+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001435s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001004s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.000919s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000384s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000785s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.002663s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.001510s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000681s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000908s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000306s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:12:40+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008067s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002164s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000916s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000981s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000450s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:12:41+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001363s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000545s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.000982s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.001181s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.004540s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000613s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:13:51+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001196s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000891s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000371s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.000899s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000395s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000847s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000382s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000788s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000657s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.001411s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000894s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000316s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:13:52+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002767s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.006729s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000578s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.003631s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.002626s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:13:53+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001266s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001536s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000466s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.000902s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000407s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.001643s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.003715s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000861s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:15:11+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001225s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000912s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000389s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.001013s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000387s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000774s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000389s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.003898s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.001615s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000617s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000891s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000329s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:15:12+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007609s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.003830s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001030s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000488s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:15:13+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001444s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001410s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000724s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.002057s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000709s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.001490s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000336s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:15:19+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001130s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000844s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000366s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.001086s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000719s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000869s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000775s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000537s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001224s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000388s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:15:20+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002614s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002201s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000735s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001330s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000721s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:15:20+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001429s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001299s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.002710s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.001087s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.002716s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.001183s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000353s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:21:30+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001639s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001146s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.001607s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000488s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000984s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000835s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000613s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000929s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000871s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000320s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:21:31+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004129s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001123s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000545s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001149s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000360s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:21:31+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001574s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000877s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000393s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.000826s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000409s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000728s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.002175s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000518s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:22:01+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001243s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.003282s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.000966s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000395s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000780s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.001096s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.003132s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000814s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000551s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001109s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000339s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:22:02+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002843s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001842s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.001024s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.001028s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:22:03+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001927s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001670s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.002223s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.001526s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000453s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.002661s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.002881s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000408s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:22:36+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001162s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000782s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000363s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.000821s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000758s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000377s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000797s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.002345s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000893s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000943s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000338s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:22:37+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002986s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.004489s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000479s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001083s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000454s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:22:37+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003559s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001248s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.004199s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.003312s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.002042s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.001251s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000507s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:28:55+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001583s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001067s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000607s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.000956s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000389s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000849s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000859s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.001347s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.001186s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001698s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.001017s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:28:56+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001355s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.005646s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.002522s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001666s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000668s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:28:56+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001235s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000846s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.000852s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000965s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.002485s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000773s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:29:16+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001392s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001005s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000492s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.001280s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000542s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.001054s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000882s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000693s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000734s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000934s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000472s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:29:16+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023900s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001316s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000854s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000405s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:29:17+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001282s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001326s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.002426s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.000894s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000481s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.000861s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000344s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:32:14+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001357s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001304s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.001440s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.001167s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000812s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000400s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000856s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000724s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000695s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000898s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000330s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:32:14+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001114s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000826s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002702s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.002993s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:32:15+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001108s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000792s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.002906s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.001036s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000402s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000471s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.001752s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000353s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:32:44+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001858s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.003474s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000438s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.000834s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000364s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000705s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000340s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000848s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000619s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000878s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000299s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:32:44+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005890s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000949s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000424s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.003301s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000340s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:32:45+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001110s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.004518s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000638s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.000888s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000440s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.001030s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000335s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:33:05+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001412s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000827s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.000854s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000384s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000762s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000384s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000818s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000645s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000991s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000326s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:33:05+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001088s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002818s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.002107s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001363s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000340s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:33:05+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001099s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000773s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000355s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.000823s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000388s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000455s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.000802s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000312s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:35:45+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001392s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.004083s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.002824s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.000949s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000464s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000842s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000880s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000675s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001018s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000370s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:35:46+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001267s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001111s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.002037s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001108s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000855s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:35:46+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001166s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000915s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000705s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.003914s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000467s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.000783s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000298s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:37:12+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001253s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000815s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000518s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.001750s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000945s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000860s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000640s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000822s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001052s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000408s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:37:13+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001202s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000856s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000358s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000844s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000373s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:37:13+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003003s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002223s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000791s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.000875s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000489s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.000848s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000327s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:37:26+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001156s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000792s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.000840s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000373s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000742s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000360s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000829s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000628s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000538s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000886s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000297s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:37:27+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001233s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000786s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000356s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.002307s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.001536s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:37:27+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001292s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000888s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.001188s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.002346s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000508s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000505s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.000951s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000369s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:39:49+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002250s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001048s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000475s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.000964s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000467s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000850s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000429s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000884s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000740s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000776s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001621s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000424s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:39:49+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001151s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001181s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000762s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000902s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000348s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:39:50+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001119s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000790s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000365s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.000923s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.000843s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000330s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:39:56+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001161s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001438s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000869s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.000998s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000469s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000890s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000599s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000890s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000663s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000567s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000898s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000404s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:39:57+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001097s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000787s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000444s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000819s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000368s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:39:57+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001101s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.003595s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.000923s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000359s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.002982s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.000816s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000292s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:40:26+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001178s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000898s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000442s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.001819s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000472s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000866s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000913s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000695s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000594s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000979s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000416s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:40:27+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001228s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000794s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000562s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.003412s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000671s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:40:27+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001124s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000780s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.001046s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.000860s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000320s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:40:55+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001358s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002212s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000850s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.001201s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000565s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.001259s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000531s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000978s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000756s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000641s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001267s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000462s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:40:56+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001287s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000827s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.002282s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001129s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000555s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:40:56+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001154s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000927s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000383s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.001176s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000413s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000593s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.000884s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000304s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:43:03+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001383s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001089s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000499s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.000961s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000358s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000891s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000810s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000671s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000562s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001046s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000363s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:43:04+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001090s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.003461s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.001705s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001210s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000466s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:43:04+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001184s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000998s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000665s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.000971s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000399s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000688s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.000833s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000308s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:43:50+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001295s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000918s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000498s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.002282s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000735s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.001091s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000534s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.000965s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000734s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000675s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001010s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000420s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:43:50+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002347s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.002400s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.002906s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001026s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000316s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:43:51+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001402s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001157s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000541s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.000987s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000431s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.000759s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000329s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:44:01+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003402s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.003963s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.001027s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000479s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.000979s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000487s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.001004s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000791s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000622s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000876s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000302s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:44:01+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001103s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000772s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000378s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.003272s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.004880s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:44:02+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001288s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000883s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.001144s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.004147s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.001343s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000713s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.001231s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000347s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:44:28+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001196s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000888s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.001217s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.002797s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.001966s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000638s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000747s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000618s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001011s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000432s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:44:28+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001125s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000870s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000902s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000897s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000301s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:44:29+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002236s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001261s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000503s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.000851s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000383s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.000844s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000305s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:44:52+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001805s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000907s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000485s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.000930s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000700s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.001869s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000730s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.001020s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000670s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000618s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000945s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000414s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:44:52+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001199s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001073s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/detail' LIMIT 1 [ RunTime:0.000372s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000930s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000323s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:44:52+08:00 ] 127.0.0.1 POST jp.baiqianwan.net/admin/branch/createstruct.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001094s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000861s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/createstruct' LIMIT 1 [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.001141s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000474s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.000818s ]
+[ sql ] [ SQL ] SELECT `seniority` FROM `system_family_seniority` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000404s ]
+---------------------------------------------------------------
+[ 2022-02-11T19:45:05+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/add.html?fid=1&branch_id=1&spm=m-113-118&open_type=modal
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001379s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000882s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/branch/add' LIMIT 1 [ RunTime:0.000357s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_member` [ RunTime:0.000828s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_region` [ RunTime:0.007434s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `system_region` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.003292s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`name`,`type` FROM `system_region` WHERE  `pid` = 1 ORDER BY `id` ASC,`sort` ASC [ RunTime:0.087663s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `id` = 1 LIMIT 1 [ RunTime:0.000614s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`fid`,`sid`,`name`,`gender`,`avastar`,`contact`,`nexus` FROM `system_family_member` WHERE  `is_deleted` = 0  AND `pid` = 1 [ RunTime:0.000418s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family_seniority` [ RunTime:0.005102s ]
+[ sql ] [ SQL ] SELECT `id`,`seniority` FROM `system_family_seniority` WHERE  `is_deleted` = 0  AND `status` = 1  AND `fid` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.006255s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001020s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000454s ]
+---------------------------------------------------------------
+[ 2022-02-11T21:55:45+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003903s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.001200s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'index/index/index' LIMIT 1 [ RunTime:0.000490s ]
+---------------------------------------------------------------
+[ 2022-02-11T21:55:46+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001244s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.000951s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/index/index' LIMIT 1 [ RunTime:0.000605s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_user` [ RunTime:0.000887s ]
+[ sql ] [ SQL ] SELECT * FROM `system_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000930s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_auth` [ RunTime:0.001736s ]
+[ sql ] [ SQL ] SELECT `id` FROM `system_auth` WHERE  `id` IN (301,302,303,304)  AND `status` = 1 [ RunTime:0.000536s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_menu` [ RunTime:0.001176s ]
+[ sql ] [ SQL ] SELECT * FROM `system_menu` WHERE  `status` = 1 ORDER BY `sort` ASC,`id` ASC [ RunTime:0.000766s ]
+[ sql ] [ SQL ] SELECT `node`,`is_menu`,`is_auth`,`is_login`,`title` FROM `system_node` [ RunTime:0.000693s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.001009s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000424s ]
+---------------------------------------------------------------
+[ 2022-02-11T21:55:46+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/family/index.html?spm=m-113-115
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001129s ] mysql:host=127.0.0.1;port=3306;dbname=jp_baiqianwan_net;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_node` [ RunTime:0.003850s ]
+[ sql ] [ SQL ] SELECT * FROM `system_node` WHERE  `node` = 'admin/family/index' LIMIT 1 [ RunTime:0.004045s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_family` [ RunTime:0.002539s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `system_family` WHERE  `is_deleted` = 0 LIMIT 1 [ RunTime:0.000857s ]
+[ sql ] [ SQL ] SELECT * FROM `system_family` WHERE  `is_deleted` = 0 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.003104s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `system_config` [ RunTime:0.000871s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `system_config` [ RunTime:0.000302s ]

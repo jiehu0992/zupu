@@ -1,0 +1,149 @@
+<blockquote class="layui-elem-quote layui-text" style="margin: 5px 10px">
+    温馨提示：1、属性名称为中文，英文名称仅需填写一个单词或多个单词的简写；2、<span style="color: #ff2600">英文名中不得出现空格或字母之外的任意字符；</span> 3、英文名尽量避免出现<span class="layui-badge-rim">name</span><span class="layui-badge-rim">sn</span><span class="layui-badge-rim">draw_num</span><span class="layui-badge-rim">supplier</span><span class="layui-badge-rim">specifiy</span><span class="layui-badge-rim">unit_id</span><span class="layui-badge-rim">program_id</span>
+</blockquote>
+<form class="layui-form layui-box" style='padding:25px 30px 20px 0' action="__SELF__" data-auto="true" method="post">
+    <div class="layui-form-item">
+        <label class="layui-form-label">属性名称</label>
+        <div class="layui-input-inline">
+            <input name="title" value='' required="required" title="请输入属性名称" placeholder="请输入属性名称" class="layui-input" pattern="^[\u4e00-\u9fa5_a-zA-Z0-9]+$">
+        </div>
+        <label class="layui-form-label">英文名</label>
+        <div class="layui-input-inline">
+            <input name="name" value=''  class="layui-input" required="required" id="name" pattern="^[a-zA-Z][a-zA-Z0-9_]{1,10}$">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">类型</label>
+        <div class="layui-input-block">
+            <input type="radio" name="type" value="texts" title="<i class='fa fa-file-text-o'></i>&nbsp;文本" checked="" lay-filter="ztype">
+            <input type="radio" name="type" value="numbers" title="<i class='fa fa-file-excel-o'></i>&nbsp;数值" lay-filter="ztype">
+            <input type="radio" name="type" value="moneys" title="<i class='fa fa-money'></i>&nbsp;金额" lay-filter="ztype">
+            <input type="radio" name="type" value="images" title="<i class='fa fa-file-picture-o'></i>&nbsp;图片" lay-filter="ztype">
+            <input type="radio" name="type" value="files" title="<i class='fa fa-cloud-upload'></i>&nbsp;附件" lay-filter="ztype">
+            <input type="radio" name="type" value="datetimes" title="<i class='fa fa-history'></i>&nbsp;日期" lay-filter="ztype">
+        </div>
+    </div>
+
+
+
+    <div class="hr-line-dashed"></div>
+    <div class="layui-form-item text-center">
+        <button class="layui-btn" type="button" id="save">保存</button>
+        <button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消操作吗？" data-close>取消</button>
+    </div>
+</form>
+<script>
+    window.form.render();
+    var reg_hanz = /^[\u4e00-\u9fa5_a-zA-Z0-9]+$/;
+    var reg_eng = /^[a-zA-Z][a-zA-Z0-9_]{1,10}$/;
+    var type_value = 'texts'; //默认值
+    var indexx = layer.index;
+    //var layer;
+    layui.use(['form','jquery','layer'],function () {
+        var form = layui.form;
+        //layer = layui.layer;
+        form.on('radio(ztype)',function (d) {
+            //执行切换时需先填写必须字段
+            type_value = d.value;
+        });
+    })
+
+    //点击保存时事件拦截
+    $("#save").on('click',function () {
+        var input_title = $("input[name=title]").val();
+        var input_name = $("#name").val();
+        var templates = '';
+        if('' !== input_title && '' !==input_name){
+            if(false == reg_hanz.test(input_title)){
+                layui.layer.msg("属性名仅支持中文和英文字符");
+                return false;
+            }
+            if(false == reg_eng.test(input_name)){
+                layui.layer.msg("英文名格式不正确");
+                return false;
+            }
+            templates = getFormTpl(type_value,input_title,input_name);
+        }else{
+            layui.layer.msg("属性或英文不能为空");
+            return false;
+        }
+        if('' !== templates){
+            parent.appendAttr('extra_attr',templates);
+        }
+        parent.layer.close(indexx);
+    })
+
+    //获取Form模板
+    function getFormTpl(type,input_title,input_name){
+        var data = '';
+        var tpl = "$(this).prev('img').attr('src', this.value)";
+        var tpl_del = '<div class="layui-form-mid layui-word-aux">\n' +
+            '            <button type="button" class="layui-btn layui-btn-primary layui-btn-xs delete"><i class="fa fa-close"></i></button>\n' +
+            '        </div>';
+        var tpl_img = '<div class="layui-form-item">\n' +
+            '        <label class="layui-form-label">'+ input_title +'</label>\n' +
+            '        <div class="layui-input-block">\n' +
+            '            <div class="layui-input-inline">\n'+
+            '                <img data-tips-image style="height:auto;max-height:100px;min-width:100px" src="/static/theme/default/img/image.png"/>\n' +
+            '                <input type="hidden" name="' + input_name + '"  onchange="'+ tpl +'"\n' +
+            '                   value="" class="layui-input">\n' +
+            '                <button class="layui-btn layui-btn-sm" data-file="one" data-type="jpg,png,gif" data-field="' + input_name + '" type="button">上传</button>\n' +
+            '            </div>\n'+
+            '        </div>\n' +tpl_del+
+            '    </div>';
+        var tpl_file = '<div class="layui-form-item">\n' +
+            '        <label class="layui-form-label">'+ input_title +'</label>\n' +
+            '        <div class="layui-input-block" style="min-height: 0px">\n' +
+            '            <div class="layui-input-inline" style="width: 300px">\n' +
+            '                <input class="layui-input" name="' + input_name + '" placeholder="请上传附件..." value="">\n' +
+            '            </div>\n' +
+            '            <div class="layui-input-inline">\n' +
+            '                <button type="button" class="layui-btn layui-btn-small layui-btn-radius" data-file="one" data-type="doc,ppt,txt,docx,pptx,zip" data-uptype="local" data-field="' + input_name + '">\n' +
+            '                    <i class="fa fa-cloud-upload"></i>上传\n' +
+            '                </button>\n' +
+            '            </div>\n' +
+            '        </div>\n' +tpl_del+
+            '    </div>';
+        var tpl_text = '<div class="layui-form-item">\n' +
+            '        <label class="layui-form-label">'+input_title+'</label>\n' +
+            '        <div class="layui-input-inline">\n' +
+            '            <input name="'+input_name+'" value=\'\'  class="layui-input" pattern="^[u4E00-u9FA5A-Za-z0-9_]+$">\n' +
+            '        </div>\n' +tpl_del+
+            '    </div>';
+        var tpl_numandmoney = '<div class="layui-form-item">\n' +
+            '        <label class="layui-form-label">'+input_title+'</label>\n' +
+            '        <div class="layui-input-inline">\n' +
+            '            <input name="'+input_name+'" type="text" value=""  class="layui-input" pattern="(^[1-9]([0-9]+)?(\\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\\.[0-9]([0-9])?$)">\n' +
+            '        </div>\n' +tpl_del+
+            '    </div>';
+        var tpl_datetime = '<div class="layui-form-item">\n' +
+            '        <label class="layui-form-label">'+input_title+'</label>\n' +
+            '        <div class="layui-input-inline">\n' +
+            '            <input name="'+input_name+'" type="datetime" value=""  class="layui-input" pattern="^[1-9]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])\\s+(20|21|22|23|[0-1]\\d):[0-5]\\d:[0-5]\\d$">\n' +
+            '        </div>\n' +tpl_del+
+            '    </div>';
+        switch (type) {
+            case "images":
+                data = tpl_img;
+                break;
+            case "files":
+                data = tpl_file;
+                break;
+            case "moneys":
+                data = tpl_numandmoney;
+                break;
+            case "numbers":
+                data = tpl_numandmoney;
+                break;
+            case "datetimes":
+                data = tpl_datetime;
+                break;
+            default:
+                data = tpl_text;
+                break;
+        }
+        return data;
+    }
+
+</script>
+

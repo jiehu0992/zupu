@@ -1,0 +1,9 @@
+---------------------------------------------------------------
+[ 2022-02-09T17:07:47+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/add.html?fid=1&branch_id=1&spm=m-113-118&open_type=modal
+[ error ] [8]未定义数组索引: branch_id[D:\WWW\jiapu_baiqianwan_net\application\admin\controller\Branch.php:146]
+---------------------------------------------------------------
+[ 2022-02-09T17:14:40+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/add.html?fid=1&branch_id=1&spm=m-113-118&open_type=modal
+[ error ] [8]未定义数组索引: seniority[D:\WWW\jiapu_baiqianwan_net\application\admin\controller\Branch.php:177]
+---------------------------------------------------------------
+[ 2022-02-09T17:46:49+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/branch/detail.html?id=1&fid=1&spm=m-113-118
+[ error ] [8]Array to string conversion[D:\WWW\jiapu_baiqianwan_net\runtime\temp\a75f9aaeee874cb99499a12825e90d7b.php:35]

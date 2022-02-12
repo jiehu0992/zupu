@@ -1,0 +1,69 @@
+{extend name='extra@admin/content'}
+{block name="button"}
+<div class="nowrap pull-right" style="margin-top:10px">
+    <button data-open='/admin.html#/admin/family/index.html' class='layui-btn layui-btn-small'><i
+            class='fa fa-mail-reply-all'></i> 返回家族
+    </button>
+    <button data-modal='{:url("$classuri/edit")}?fid={$fid}' data-title="添加字辈" class='layui-btn layui-btn-small'><i
+            class='fa fa-plus'></i> 添加字辈
+    </button>
+    <button data-update data-field='delete' data-action='{:url("$classuri/del")}'
+            class='layui-btn layui-btn-small layui-btn-danger'><i class='fa fa-remove'></i> 删除字辈
+    </button>
+</div>
+{/block}
+
+{block name="content"}
+
+<form onsubmit="return false;" data-auto="true" method="post">
+    <input type="hidden" value="resort" name="action"/>
+    <table class="layui-table" lay-skin="line" lay-size="sm">
+        <thead>
+        <tr>
+            <th class='list-table-check-td'>
+                <input data-none-auto="" data-check-target='.list-check-box' type='checkbox'/>
+            </th>
+            <th class='list-table-sort-td'>
+                <button type="submit" class="layui-btn layui-btn-normal layui-btn-mini">排 序</button>
+            </th>
+            <th class='text-center'>字辈</th>
+            <th class='text-center'>家族</th>
+            <th class='text-center'>状态</th>
+            <th class='text-center'>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td'>
+                <input class="list-check-box" value='' type='checkbox'/>
+            </td>
+            <td class='list-table-sort-td'>
+                <input name="_{$vo.id}" value="{$vo.sort}" class="list-sort-input"/>
+            </td>
+            <td class='text-center'>{$vo.seniority|default="暂无"}</td>
+            <td class='text-center'>{$vo.fid|getFamilyName|default="暂无"}</td>
+            <td class='text-center'>
+                {if $vo.status eq 0}
+                <span><a data-update="{$vo.id}" data-field='status' data-value='1' data-action='{:url("$classuri/del")}'>已禁用</a></span>
+                {elseif $vo.status eq 1}
+                <span style="color:#090"><a data-update="{$vo.id}" data-field='status' data-value='0' data-action='{:url("$classuri/del")}'>使用中</a></span>
+                {/if}
+            </td>
+            <td class='text-center nowrap'>
+                {if auth("$classuri/edit")}
+                <span class="text-explode">|</span>
+                <a data-modal='{:url("$classuri/edit")}?id={$vo.id}&fid={$vo.fid}' href="javascript:void(0)">编辑</a>
+                {/if}
+                {if auth("$classuri/del")}
+                <span class="text-explode">|</span>
+                <a data-update="{$vo.id}" data-field='delete' data-action='{:url("$classuri/del")}&fid={$vo.fid}'
+                   href="javascript:void(0)">删除</a>
+                {/if}
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+</form>
+{/block}

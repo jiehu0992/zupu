@@ -1,0 +1,107 @@
+{extend name='extra@admin/content'}
+{block name="button"}
+<div class="nowrap pull-right" style="margin-top:10px">
+    <button data-modal='{:url("$classuri/edit")}?fid={$fid}' data-title="添加分支" class='layui-btn layui-btn-small'>
+        <i class='fa fa-plus'></i> 添加分支
+    </button>
+    <button data-update data-field='delete' data-action='{:url("$classuri/del")}?fid={$fid}' class='layui-btn layui-btn-small layui-btn-danger'>
+        <i class='fa fa-remove'></i> 删除家族
+    </button>
+</div>
+{/block}
+
+{block name="content"}
+<!-- 表单搜索 开始 -->
+<form class="layui-form layui-form-pane form-search" action="__SELF__" onsubmit="return false" method="get">
+    <div class="layui-form-item layui-inline">
+        <label class="layui-form-label">分支姓名</label>
+        <div class="layui-input-inline">
+            <input name="name" value="{$Think.get.name|default=''}" placeholder="请输入分支姓名" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item layui-inline">
+        <label class="layui-form-label">手机号</label>
+        <div class="layui-input-inline">
+            <input name="contact" value="{$Think.get.contact|default=''}" placeholder="请输入手机号" class="layui-input" pattern="^1[3-9][0-9]{9}$">
+        </div>
+    </div>
+    <div class="layui-form-item layui-inline">
+        <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+    </div>
+</form>
+<!-- 表单搜索 结束 -->
+
+<form onsubmit="return false;" data-auto="true" method="post">
+    {if empty($list)}
+    <p class="help-block text-center well">没 有 记 录 哦！</p>
+    {else}
+    <input type="hidden" value="resort" name="action"/>
+    <table class="layui-table" lay-skin="line" lay-size="sm">
+        <thead>
+        <tr>
+            <th class='list-table-check-td'>
+                <input data-none-auto="" data-check-target='.list-check-box' type='checkbox'/>
+            </th>
+            <th class='text-center nowrap'>照片</th>
+            <th class='text-center nowrap'>分支姓名</th>
+            <th class='text-center nowrap'>家族名称</th>
+            <th class='text-center nowrap'>字辈</th>
+            <th class='text-center nowrap'>出生日期</th>
+            <th class='text-center nowrap'>联系方式</th>
+            <th class='text-center nowrap'>所在城市</th>
+            <th class='text-center nowrap'>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td'>
+                <input class="list-check-box" value='{$vo.id}' type='checkbox'/>
+            </td>
+            <td class='text-center nowrap'>
+                <img data-tips-image src="{$vo.avastar|default='/static/theme/default/img/avastar.png'}" width="50px" height="auto" />
+            </td>
+            <td class='text-center nowrap'>
+                {$vo.name|default=''}
+            </td>
+            <td class='text-center nowrap'>
+                {$vo.fid|getFamilyName|default="暂无"}
+            </td>
+            <td class='text-center nowrap'>
+                {$vo.sid|getSeniorityName|default="暂无"}
+            </td>
+            <td class='text-center nowrap'>
+                {$vo.birthday|default="<span class='color-desc'>暂未设置</span>"}
+            </td>
+            <td class='text-center nowrap'>
+                {$vo.contact|default="<span class='color-desc'>暂未设置</span>"}
+            </td>
+            <td class='text-center nowrap'>
+                {$vo.province|getRegionName|default="未设置"}-{$vo.city|getRegionName|default="未设置"}
+            </td>
+            <td class='text-center' style="width: 250px">
+                {if auth("$classuri/detail")}
+                <span class="text-explode">|</span>
+                <a data-open='{:url("$classuri/detail")}?id={$vo.id}&fid={$vo.fid}' href="javascript:void(0)">图谱</a>
+                {/if}
+                {if auth("$classuri/edit")}
+                <span class="text-explode">|</span>
+                <a data-modal='{:url("$classuri/edit")}?id={$vo.id}&fid={$vo.fid}' href="javascript:void(0)">编辑</a>
+                {/if}
+                {if auth("$classuri/del")}
+                <span class="text-explode">|</span>
+                <a data-update="{$vo.id}" data-field='delete' data-action='{:url("$classuri/del")}?fid={$vo.fid}'
+                   href="javascript:void(0)" data-confirm="确定要删除该家族分支吗?">删除</a>
+                {/if}
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {if isset($page)}<p>{$page}</p>{/if}
+    {/if}
+    <script>
+        window.form.render();
+    </script>
+</form>
+{/block}

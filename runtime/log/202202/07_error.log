@@ -1,0 +1,9 @@
+---------------------------------------------------------------
+[ 2022-02-07T14:23:55+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/seniority/index.html?fid=1&spm=m-113-116
+[ error ] [0]致命错误: Call to undefined function getFamilyName()[D:\WWW\jiapu_baiqianwan_net\runtime\temp\ba981cd54438a2eb306b2a9512d28195.php:60]
+---------------------------------------------------------------
+[ 2022-02-07T14:24:02+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/seniority/index.html?fid=1&spm=m-113-116
+[ error ] [0]致命错误: Call to undefined function getFamilyName()[D:\WWW\jiapu_baiqianwan_net\runtime\temp\ba981cd54438a2eb306b2a9512d28195.php:60]
+---------------------------------------------------------------
+[ 2022-02-07T14:25:44+08:00 ] 127.0.0.1 GET jp.baiqianwan.net/admin/seniority/index.html?fid=1&spm=m-113-116
+[ error ] [2]Use of undefined constant name - assumed 'name' (this will throw an Error in a future version of PHP)[D:\WWW\jiapu_baiqianwan_net\runtime\temp\ba981cd54438a2eb306b2a9512d28195.php:60]
