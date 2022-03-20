@@ -1,13 +1,19 @@
 {extend name='extra@admin/content'}
 {block name="button"}
 <div class="nowrap pull-right" style="margin-top:10px">
+    <button data-open='/admin.html#/admin/family/index.html' class='layui-btn layui-btn-small'><i
+            class='fa fa-mail-reply-all'></i> 返回家族
+    </button>
     <button data-modal='{:url("$classuri/add")}?fid={$fid}&branch_id={$id}' data-title="添加成员" class='layui-btn layui-btn-small'>
         <i class='fa fa-plus'></i> 添加成员
+    </button>
+    <button data-open='{:url("$classuri/index")}?fid={$fid}' class='layui-btn layui-btn-small'><i
+            class='fa fa-mail-reply-all'></i> 返回分支
     </button>
 </div>
 {/block}
 {block name="content"}
-<div id="mainStructure" style="min-height:500px;"></div>
+<div id="mainStructure" style="min-height:800px;"></div>
 <script src="/static/admin/echarts/chart/echarts.js"></script>
 <script type="text/javascript">
     //Echarts CDN路径
@@ -91,6 +97,11 @@
                 // 为echarts对象加载数据
                 myChart.hideLoading();
                 myChart.setOption(option);
+                myChart.on('click',function (data) {
+                    var param = data.data;
+                    var url = "/admin/branch/add.html?id="+param.id+"&fid="+fid+"&branch_id="+bid;
+                    $.form.modal(url,'open_type=modal','修改成员');
+                })
             })
         });
 </script>
