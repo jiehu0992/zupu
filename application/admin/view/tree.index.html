@@ -1,0 +1,145 @@
+{extend name='extra@admin/content'}
+
+{block name="button"}
+<div class="nowrap pull-right" style="margin-top:10px">
+    <button data-open='/admin.html#/admin/family/index.html' class='layui-btn layui-btn-small'><i
+            class='fa fa-mail-reply-all'></i> 返回家族
+    </button>
+    <button data-modal='/admin/branch/edit.html?fid={$fid}' data-title="添加分支" class='layui-btn layui-btn-small'>
+        <i class='fa fa-plus'></i> 添加分支
+    </button>
+    <button data-update data-field='delete' data-action='/admin/branch/del.html?fid={$fid}' class='layui-btn layui-btn-small layui-btn-danger'>
+        <i class='fa fa-remove'></i> 删除家族
+    </button>
+</div>
+{/block}
+
+{block name="content"}
+<style>
+    .list-sort-input{
+        width: 50px;
+        text-align: center;
+        font-size: 12px;
+        padding: 2px;
+        border: 1px solid #E6E6E6;
+    }
+</style>
+<form class="layui-form layui-form-pane form-search" action="__SELF__" onsubmit="return false" method="get">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-inline">
+                <input name="name" class="layui-input" placeholder="请输入姓名"/>
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">联系电话</label>
+            <div class="layui-input-inline">
+                <input name="contact" class="layui-input" placeholder="请输入联系电话"/>
+            </div>
+        </div>
+        <div class="layui-inline">&emsp;
+            <button class="layui-btn icon-btn" lay-filter="formSearch" lay-submit>
+                <i class="layui-icon">&#xe615;</i>搜索
+            </button>&nbsp;
+        </div>
+    </div>
+</form>
+
+<form onsubmit="return false;" data-auto="true" method="post">
+    {if empty($list)}
+    <p class="help-block text-center well">没 有 记 录 哦！</p>
+    {else}
+    <input type="hidden" value="resort" name="action"/>
+    <table class="layui-table" lay-skin="line" lay-size="sm" id="demoTreeTb"></table>
+    {/if}
+</form>
+<script>
+    layui.use(['treeTable','form','jquery'],function (){
+        var $ = layui.jquery;
+        var form = layui.form;
+        var treeTable=layui.treeTable;
+        var listData = {$list|json_encode=true};
+        var fid = {$fid|default="0"};
+        var tbDataList = [];
+        var insTb = treeTable.render({
+            elem:'#demoTreeTb',
+            data:listData,
+            tree:{
+                iconIndex: 3,
+                isPidData: true,
+                idName: 'id',
+                pidName: 'pid',
+                onlyIconControl:true
+            },
+            cols: [
+                [
+                    {type: 'numbers',title: 'ID'},
+                    {field: 'id',title: '成员ID',width:50,align: 'center'},
+                    {field: 'sort',title: '<button type="submit" class="layui-btn layui-btn-xs layui-btn-normal">排 序</button>',width:100,align:'center',templet:function (d) {
+                            return '<input name="_'+d.id+'" value="'+d.sort+'" class="list-sort-input"/>';
+                        }
+                    },
+                    {field: 'name', title: '姓名', minWidth: 165,templet:function (d){
+                            var url = "/admin/branch/add.html?id="+d.id+"&fid="+fid;
+                            return '<a data-modal="'+url+'" href="javascript:void(0)" data-title="修改成员">'+d.name+'</a>';
+                        }
+                    },
+                    {field: 'gender', width: 150, align: 'center', templet: function (d) {
+                            if (d.gender == 1) {
+                                return '<span style="color: #00B83F">男</span>';
+                            }else if (d.gender == 2) {
+                                return '<span style="color: #007DDB">女</span>';
+                            }else{
+                                return '<span style="color: #000">未知</span>';
+                            }
+                        }, title: '性别'
+                    },
+                    {field: 'sid', title: '字辈', Width: 200,align: 'center'},
+                    {field: 'contact', title: '联系方式', Width: 200,align: 'center'},
+                    {field: 'birthday', title: '出生年月', Width: 200,align: 'center'},
+                    {align: 'center', title: '操作', width: 250,templet:function (d) {
+                        var tbBar = '';
+                            if(d.pid == 0){
+                                tbBar += '<a data-modal="/admin/branch/add.html?fid='+fid+'&branch_id='+d.id+'" href="javascript:void(0)" data-title="添加成员">添加</a>';
+                            }
+                            return tbBar;
+                        }}
+                ]
+            ],
+            done: function (data) {
+                tbDataList = data;
+            },
+            style: 'margin-top:0;'
+        });
+
+        /* 表格搜索 */
+        form.on('submit(formSearch)', function (data) {
+            doTbSearch(data.field, 'id');
+            return false;
+        });
+        /* 搜索表格数据 */
+        function doTbSearch(field, idName) {
+            var ids = [], isClear = true;
+            for (var i = 0; i < tbDataList.length; i++) {
+                var item = tbDataList[i], flag = true;
+                for (var f in field) {
+                    if (!field.hasOwnProperty(f)) continue;
+                    if (!field[f]) continue;
+                    isClear = false;
+                    if (!item[f] || item[f].indexOf(field[f]) === -1) {
+                        flag = false;
+                        break;
+                    }
+                }
+                if (flag) ids.push(item[idName]);
+            }
+            if (isClear) {
+                insTb.clearFilter();
+            } else {
+                insTb.filterData(ids);
+            }
+        }
+    })
+</script>
+{/block}
