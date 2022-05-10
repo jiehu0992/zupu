@@ -165,6 +165,14 @@ class Branch extends BasicAdmin{
             }
             //分支用户选项
             $branch_id = $this->request->get('branch_id','','intval');
+            //修复前端不方便传入分支ID的情况
+            if(empty($branch_id) && $data['id'] > 0){
+                $info = ['id'=>$data['id'],'pid'=>$data['pid']];
+                while ($info['pid'] !== 0){
+                    $info = Db::name($this->table)->where(['id'=>$info['pid']])->field('id,pid')->find();
+                }
+                $branch_id = $info['id'];
+            }
             if(!empty($branch_id)){
                 $model = new BranchModel();
                 $user = Db::name($this->table)->where(['is_deleted'=>0,'id'=>$branch_id])->field('id,pid,fid,sid,name,gender,avastar,contact,nexus')->find();
