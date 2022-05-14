@@ -39,4 +39,18 @@ class Tree extends BasicAdmin{
         $this->assign('fid',$this->fid);
         return parent::_list($db,false);
     }
+	
+	/**
+     * 家谱图
+     */
+    public function structure(){
+        $this->title = "家族分支图谱";
+        $branch_id = input('id','','intval');
+        $back_url = 'admin.html#/admin/branch/index.html?fid='.$this->fid;
+        (empty($branch_id)) && $this->error('分支ID不能为空',$back_url);
+        $this->assign('fid',$this->fid);
+        $this->assign('id',$branch_id);
+        return view('',['title'=>$this->title]);
+    }
+	
 }

@@ -1,0 +1,99 @@
+{extend name="extra@admin/main"}
+
+{block name="body"}
+<div id="mainStructure" style="min-height: 1000px;width: 100%"></div>
+{/block}
+
+{block name="script"}
+<script src="/static/plugs/jquery/jquery.min.js"></script>
+<script src="/static/admin/echarts/chart/echarts.js"></script>
+<script type="text/javascript">
+    //Echarts CDN路径
+    require.config({
+        paths: {
+            echarts: 'https://cdn.jsdelivr.net/npm/echarts@2.2.8/build'
+        }
+    });
+    var bid = {$id};
+    var fid = {$fid};
+    require(['echarts','echarts/chart/tree'],function (ec) {
+        // 基于准备好的dom，初始化echarts图表
+        var myChart = ec.init(document.getElementById('mainStructure'));
+        myChart.showLoading();
+        $.post('/admin/branch/createStruct.html',{branch_id:bid,fid:fid},function (res) {
+            var option = {
+                title : {
+                    text: '家族分支图谱',
+                    x:'center',
+                },
+                tooltip : {
+                    show: true,
+                    trigger: 'item',
+                    formatter: function (v) {
+                        var phone = v.contact == undefined?"无":v.contact
+                        return "字辈:["+v.value+"]"+'<br/>'+"手机:"+phone;
+                    },
+                    textStyle: {
+                        fontSize: 18,
+                        fontFamily:'Microsoft YaHei',
+                    }
+                },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        restore : {show: true},
+                        saveAsImage : {show: true}
+                    }
+                },
+                calculable : true,
+                series : [
+                    {
+                        name:'家族树',
+                        type:'tree',
+                        orient: 'vertical',  // vertical horizontal
+                        rootLocation: {x: '50%', y: '70'}, // 根节点位置  {x: 'center',y: 10}
+                        nodePadding: 10,
+                        layerPadding:40,
+                        symbol: 'rectangle',
+                        borderColor:'black',
+                        itemStyle: {
+                            normal: {
+                                color: '#fff',//节点背景色
+                                borderWidth: 2,
+                                borderColor: 'black',
+                                label: {
+                                    show: true,
+                                    position: 'inside',
+                                    textStyle: {
+                                        color: 'black',
+                                        fontSize: 16,
+                                    }
+                                },
+                                lineStyle: {
+                                    color: '#000',
+                                    width: 1,
+                                    type: 'broken'
+                                }
+                            },
+                            emphasis: {
+                                label: {
+                                    show: false
+                                }
+                            }
+                        },
+                        data:[res]
+                    }
+                ]
+            };
+            // 为echarts对象加载数据
+            myChart.hideLoading();
+            myChart.setOption(option);
+            myChart.on('click',function (data) {
+                var param = data.data;
+                var url = "/admin/branch/add.html?id="+param.id+"&fid="+fid+"&branch_id="+bid;
+                $.form.modal(url,'open_type=modal','修改成员');
+            })
+        })
+    });
+</script>
+{/block}

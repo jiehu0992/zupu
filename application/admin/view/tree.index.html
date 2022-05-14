@@ -99,9 +99,9 @@
                     {field: 'contact', title: '联系方式', Width: 200,align: 'center'},
                     {field: 'birthday', title: '出生年月', Width: 200,align: 'center'},
                     {align: 'center', title: '操作', width: 250,templet:function (d) {
-                        var tbBar = '';
+                        var tbBar = '<a data-href="/admin/tree/structure?id='+d.id+'&fid='+fid+'" href="javascript:void(0)" data-title="分支图谱">图谱</a>';
                             if(d.pid == 0){
-                                tbBar += '<a data-modal="/admin/branch/add.html?fid='+fid+'&branch_id='+d.id+'" href="javascript:void(0)" data-title="添加成员">添加</a>';
+                                tbBar += '<span class="text-explode">|</span><a data-modal="/admin/branch/add.html?fid='+fid+'&branch_id='+d.id+'" href="javascript:void(0)" data-title="添加成员">添加</a>';
                             }
                             return tbBar;
                         }}
