@@ -20,7 +20,7 @@ class BranchModel extends Model{
     public function getUserChildren($user){
         static $data = [];  //首次调用初始化
         $result = Db::name($this->table)->where(['is_deleted'=>0,'pid'=>$user['id']])
-            ->field('id,pid,fid,sid,name,gender,avastar,contact,nexus')->select();
+            ->field('id,pid,fid,sid,name,gender,avastar,contact,nexus')->order('sort asc,id asc')->select();
         foreach ($result as $key=>$val){
             $data[] = $val;
             $this->getUserChildren($val);

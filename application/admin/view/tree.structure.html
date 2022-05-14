@@ -21,10 +21,12 @@
         var myChart = ec.init(document.getElementById('mainStructure'));
         myChart.showLoading();
         $.post('/admin/branch/createStruct.html',{branch_id:bid,fid:fid},function (res) {
+            console.log(res);
             var option = {
                 title : {
                     text: '家族分支图谱',
                     x:'center',
+                    y:"40",
                 },
                 tooltip : {
                     show: true,
@@ -50,12 +52,15 @@
                     {
                         name:'家族树',
                         type:'tree',
+                        layout:'orthogonal',
                         orient: 'vertical',  // vertical horizontal
-                        rootLocation: {x: '50%', y: '70'}, // 根节点位置  {x: 'center',y: 10}
+                        rootLocation: {x: '50%', y: '110'}, // 根节点位置  {x: 'center',y: 10}
                         nodePadding: 10,
                         layerPadding:40,
+                        width:"100%",
                         symbol: 'rectangle',
                         borderColor:'black',
+                        roam: true,
                         itemStyle: {
                             normal: {
                                 color: '#fff',//节点背景色
@@ -77,11 +82,11 @@
                             },
                             emphasis: {
                                 label: {
-                                    show: false
+                                    show: false,
                                 }
                             }
                         },
-                        data:[res]
+                        data:[res],
                     }
                 ]
             };
