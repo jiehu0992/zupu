@@ -165,7 +165,6 @@ class Branch extends BasicAdmin{
             }
             //分支用户选项
             $branch_id = $this->request->get('branch_id','','intval');
-            //修复前端不方便传入分支ID的情况
             if(empty($branch_id) && $data['id'] > 0){
                 $info = ['id'=>$data['id'],'pid'=>$data['pid']];
                 while ($info['pid'] !== 0){

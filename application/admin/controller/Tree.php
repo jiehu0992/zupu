@@ -39,8 +39,8 @@ class Tree extends BasicAdmin{
         $this->assign('fid',$this->fid);
         return parent::_list($db,false);
     }
-	
-	/**
+
+    /**
      * 家谱图
      */
     public function structure(){
@@ -52,5 +52,5 @@ class Tree extends BasicAdmin{
         $this->assign('id',$branch_id);
         return view('',['title'=>$this->title]);
     }
-	
+
 }

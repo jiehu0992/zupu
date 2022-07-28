@@ -1,6 +1,9 @@
 {extend name='extra@admin/content'}
 {block name="button"}
 <div class="nowrap pull-right" style="margin-top:10px">
+    <button data-open='/admin.html#/admin/family/index.html' class='layui-btn layui-btn-small'><i
+            class='fa fa-mail-reply-all'></i> 返回家族
+    </button>
     <button data-modal='{:url("$classuri/edit")}?fid={$fid}' data-title="添加分支" class='layui-btn layui-btn-small'>
         <i class='fa fa-plus'></i> 添加分支
     </button>

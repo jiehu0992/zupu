@@ -13,7 +13,7 @@
 </div>
 {/block}
 {block name="content"}
-<div id="mainStructure" style="min-height:800px;"></div>
+<div id="mainStructure" style="min-height: 800px;width: 100%"></div>
 <script src="/static/admin/echarts/chart/echarts.js"></script>
 <script type="text/javascript">
     //Echarts CDN路径
@@ -42,7 +42,7 @@
                             return "字辈:["+v.value+"]"+'<br/>'+"手机:"+phone;
                         },
                         textStyle: {
-                            fontSize: 16,
+                            fontSize: 18,
                             fontFamily:'Microsoft YaHei',
                         }
                     },
@@ -53,17 +53,19 @@
                             saveAsImage : {show: true}
                         }
                     },
-                    calculable : false,
+                    calculable : true,
                     series : [
                         {
                             name:'家族树',
                             type:'tree',
+                            layout:'orthogonal',
                             orient: 'vertical',  // vertical horizontal
                             rootLocation: {x: '50%', y: '15%'}, // 根节点位置  {x: 'center',y: 10}
                             nodePadding: 20,
                             layerPadding:40,
                             symbol: 'rectangle',
                             borderColor:'black',
+                            roam: true,
                             itemStyle: {
                                 normal: {
                                     color: '#fff',//节点背景色

@@ -53,23 +53,14 @@ private static $installed = array (
       ),
       'reference' => '492866331b7bafaac09506cf42f351b7e9e63766',
     ),
-    'bacon/bacon-qr-code' => 
+    'endroid/qrcode' => 
     array (
-      'pretty_version' => '1.0.3',
-      'version' => '1.0.3.0',
+      'pretty_version' => '1.9.3',
+      'version' => '1.9.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => '5a91b62b9d37cee635bbf8d553f4546057250bee',
-    ),
-    'endroid/qr-code' => 
-    array (
-      'pretty_version' => '2.5.1',
-      'version' => '2.5.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '6062677d3404e0ded40647b8f62ec55ff9722eb7',
+      'reference' => 'c9644bec2a9cc9318e98d1437de3c628dcd1ef93',
     ),
     'flc/alidayu' => 
     array (
@@ -107,15 +98,6 @@ private static $installed = array (
       ),
       'reference' => '53330f47520498c0ae1f61f7e2c90f55690c06a3',
     ),
-    'khanamiryan/qrcode-detector-decoder' => 
-    array (
-      'pretty_version' => '1',
-      'version' => '1.0.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '96d5f80680b04803c4f1b69d6e01735e876b80c7',
-    ),
     'markbaker/complex' => 
     array (
       'pretty_version' => '1.5.0',
@@ -142,15 +124,6 @@ private static $installed = array (
       array (
       ),
       'reference' => '2209ddd84e7ef1256b7af205d0717fb62cfc9c33',
-    ),
-    'myclabs/php-enum' => 
-    array (
-      'pretty_version' => '1.6.6',
-      'version' => '1.6.6.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '32c4202886c51fbe5cc3a7c34ec5c9a4a790345e',
     ),
     'paragonie/random_compat' => 
     array (
@@ -249,21 +222,12 @@ private static $installed = array (
     ),
     'symfony/options-resolver' => 
     array (
-      'pretty_version' => 'v2.8.52',
-      'version' => '2.8.52.0',
+      'pretty_version' => 'v3.4.47',
+      'version' => '3.4.47.0',
       'aliases' => 
       array (
       ),
-      'reference' => '7aaab725bb58f0e18aa12c61bdadd4793ab4c32b',
-    ),
-    'symfony/polyfill-ctype' => 
-    array (
-      'pretty_version' => 'v1.19.0',
-      'version' => '1.19.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'aed596913b70fae57be53d86faa2e9ef85a2297b',
+      'reference' => 'c7efc97a47b2ebaabc19d5b6c6b50f5c37c92744',
     ),
     'symfony/polyfill-intl-idn' => 
     array (
@@ -309,15 +273,6 @@ private static $installed = array (
       array (
       ),
       'reference' => 'beecef6b463b06954638f02378f52496cb84bacc',
-    ),
-    'symfony/property-access' => 
-    array (
-      'pretty_version' => 'v2.8.52',
-      'version' => '2.8.52.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'c8f10191183be9bb0d5a1b8364d3891f1bde07b6',
     ),
     'topthink/framework' => 
     array (
@@ -390,6 +345,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '720cb0f23c3ae5f0143b3457901e177dd3d54387',
+    ),
+    'workerman/mqtt' => 
+    array (
+      'pretty_version' => 'v1.1',
+      'version' => '1.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '248cdf4216a3373557ea8db9510d563d2988e820',
     ),
     'workerman/workerman' => 
     array (
@@ -659,7 +623,6 @@ self::$canGetVendors = method_exists('Composer\Autoload\ClassLoader', 'getRegist
 $installed = array();
 
 if (self::$canGetVendors) {
-
 foreach (ClassLoader::getRegisteredLoaders() as $vendorDir => $loader) {
 if (isset(self::$installedByVendor[$vendorDir])) {
 $installed[] = self::$installedByVendor[$vendorDir];

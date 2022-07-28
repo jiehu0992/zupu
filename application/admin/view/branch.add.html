@@ -33,7 +33,7 @@
         <div class="layui-input-inline">
             <select name="gender" lay-filter="gender">
                 <option value="0" {if isset($vo.gender) and $vo.gender eq 0} selected="" {/if}>请选择</option>
-                <option value="1" {if isset($vo.gender) and $vo.gender eq 1} selected="" {/if}>男</option>
+                <option value="1" {if empty($vo.gender) or $vo.gender eq 1} selected="" {/if}>男</option>
                 <option value="2" {if isset($vo.gender) and $vo.gender eq 2} selected="" {/if}>女</option>
             </select>
         </div>
@@ -50,7 +50,7 @@
         <div class="layui-input-inline">
             <select name="nexus" lay-filter="nexus">
                 <option value="0" {if isset($vo.nexus) and $vo.nexus eq 0} selected="" {/if}>请选择</option>
-                <option value="1" {if isset($vo.nexus) and $vo.nexus eq 1} selected="" {/if}>子女</option>
+                <option value="1" {if empty($vo.nexus) or $vo.nexus eq 1} selected="" {/if}>子女</option>
                 <option value="2" {if isset($vo.nexus) and $vo.nexus eq 2} selected="" {/if}>配偶</option>
             </select>
         </div>

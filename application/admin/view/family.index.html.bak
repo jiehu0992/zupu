@@ -1,0 +1,174 @@
+{extend name='extra@admin/content'}
+{block name="button"}
+<div class="nowrap pull-right" style="margin-top:10px">
+    <button data-modal='{:url("$classuri/edit")}' data-title="添加家族" class='layui-btn layui-btn-small'>
+        <i class='fa fa-plus'></i> 添加家族
+    </button>
+    <button data-update data-field='delete' data-action='{:url("$classuri/del")}' class='layui-btn layui-btn-small layui-btn-danger'>
+        <i class='fa fa-remove'></i> 删除家族
+    </button>
+</div>
+{/block}
+
+{block name="content"}
+<style>
+    .slide-submenu{
+        position: absolute;
+        width: 100px;
+        color: #333;
+        background: #fff;
+        z-index: 800;
+        padding: 0px 0;
+        right: -60px;
+        top: 18px;
+        border-top: 1px solid #e0e0e0;
+        display: none;
+    }
+    .slide-submenu a{
+        line-height: 30px;
+        padding: 0 15px;
+        display: block;
+        font-size: 14px;
+    }
+    .slide-submenu a:hover{
+        background: #fafafa;
+    }
+    .more:hover .slide-submenu{
+        display: block;
+    }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/microanswer/layui_dropdown@2.3.3/dist/dropdown.css" media="all">
+<!-- 表单搜索 开始 -->
+<form class="layui-form layui-form-pane form-search" action="__SELF__" onsubmit="return false" method="get">
+    <div class="layui-form-item layui-inline">
+        <label class="layui-form-label">家族名称</label>
+        <div class="layui-input-inline">
+            <input name="name" value="{$Think.get.name|default=''}" placeholder="请输入家族名称" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-inline">
+        <label class="layui-form-label">姓氏</label>
+        <div class="layui-input-inline">
+            <input name="last_name" value="{$Think.get.last_name|default=''}" placeholder="请输入姓氏" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-inline">
+        <label class="layui-form-label">始祖姓名</label>
+        <div class="layui-input-inline">
+            <input name="ancestor" value="{$Think.get.ancestor|default=''}" placeholder="请输入始祖姓名" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-inline">
+        <label class="layui-form-label">更新时间</label>
+        <div class="layui-input-inline">
+            <input name="date" id='range-date' value="{$Think.get.date|default=''}"
+                   placeholder="请选择最新更新时间" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-inline">
+        <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i> 搜 索</button>
+    </div>
+</form>
+<!-- 表单搜索 结束 -->
+
+<form onsubmit="return false;" data-auto="true" method="post">
+    {if empty($list)}
+    <p class="help-block text-center well">没 有 记 录 哦！</p>
+    {else}
+    <input type="hidden" value="resort" name="action"/>
+    <table class="layui-table" lay-skin="line" lay-size="sm">
+        <thead>
+        <tr>
+            <th class='list-table-check-td'>
+                <input data-none-auto="" data-check-target='.list-check-box' type='checkbox'/>
+            </th>
+            <th class='text-left nowrap'>家族名称</th>
+            <th class='text-left nowrap'>姓氏</th>
+            <th class='text-left nowrap'>始祖姓名</th>
+            <th class='text-left nowrap'>房系</th>
+            <th class='text-left nowrap'>修谱时间</th>
+            <th class='text-left nowrap'>更新时间</th>
+            <th class='text-left nowrap'>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $list as $key=>$vo}
+        <tr>
+            <td class='list-table-check-td'>
+                <input class="list-check-box" value='{$vo.id}' type='checkbox'/>
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.name}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.last_name|default="<span class='color-desc'>还没有设置姓氏</span>"}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.ancestor|default="<span class='color-desc'>不详</span>"}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.faction|default="<span class='color-desc'>暂未设置</span>"}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.addtime|default=""}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.uptime|default=""}
+            </td>
+            <td class='text-left' style="width: 250px">
+                {if auth("$classuri/edit")}
+                <span class="text-explode">|</span>
+                <a data-modal='{:url("$classuri/edit")}?id={$vo.id}' href="javascript:void(0)">编辑</a>
+                {/if}
+                {if auth("$classuri/del")}
+                <span class="text-explode">|</span>
+                <a data-update="{$vo.id}" data-field='delete' data-action='{:url("$classuri/del")}'
+                   href="javascript:void(0)">删除</a>
+                {/if}
+                <span>|</span>
+                <span class="nav-list" style="display: inline-block;text-decoration: none;cursor: pointer;position: relative">
+                    <a class="more" href="javascript:;" data-value="{$vo.id}">更多&#9660;</a>
+                    <ul class="slide-submenu qy-box">
+                        {if auth("/admin/family/train")}<a data-open='{:url("/admin/family/train")}?id={$vo.id}' href="javascript:void(0)" data-title="家风家训">家风家训</a>{/if}
+                        {if auth("/admin/seniority/index")}<a data-open='{:url("/admin/seniority/index")}?fid={$vo.id}' href="javascript:void(0)" data-title="字辈设置">字辈设置</a>{/if}
+                        {if auth("/admin/branch/index")}<a data-open='{:url("/admin/branch/index")}?fid={$vo.id}' href="javascript:void(0)" data-title="分支管理">分支管理</a>{/if}
+                    </ul>
+                </span>
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {if isset($page)}<p>{$page}</p>{/if}
+    {/if}
+    <script>
+        window.form.render();
+        window.laydate.render({range: true, elem: '#range-date', format: 'yyyy/MM/dd'});
+        layui.use(['jquery'],function (){
+            var $ = layui.jquery;
+            //更多操作的下拉菜单
+            $('.more').hover(
+                function(){
+                    $(this).next('.qy-box').show();
+                },
+                function(){
+                    $(this).next('.qy-box').hide();
+                },
+            );
+            //防止鼠标移动过慢无法点击下拉菜单
+            $('.slide-submenu').hover(
+                function (){
+                    $(this).show();
+                },
+                function (){
+                    $(this).hide();
+                }
+            )
+        })
+    </script>
+</form>
+{/block}
